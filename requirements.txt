@@ -1,6 +1,7 @@
-numpy
+torch
+snntorch
 pandas
+numpy
+scikit-learn
 matplotlib
-yfinance
-brian2
-jupyter
+yfinance 
