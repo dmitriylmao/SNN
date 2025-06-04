@@ -10,6 +10,19 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, accuracy_s
 from utils.data_processing import load_stock_data, create_features, create_target, scale_features, create_sequences
 from snn_model.snn_classifier import SNNClassifier
 
+import random 
+
+def set_seed(seed=66):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+
+set_seed(66)
 
 
 SEQUENCE_LENGTH = 20
